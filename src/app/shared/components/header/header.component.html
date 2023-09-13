@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg py-5 mt-5">
+  <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-4">
+    <li class="h4 nav-item mx-2">
+      <a class="text-decoration-none p-3 glassmorphism-hover rounded-3"
+         routerLink="/generate"
+         routerLinkActive
+         #rlaGenerate="routerLinkActive"
+         [ngClass]="{
+          'active': rlaGenerate.isActive,
+          'text-white': !rlaGenerate.isActive,
+         }">Generate</a>
+    </li>
+    <li class="h4 nav-item mx-2">
+      <a class="text-decoration-none p-3 glassmorphism-hover rounded-3"
+         routerLink="/add"
+         routerLinkActive
+         #rlaAdd="routerLinkActive"
+         [ngClass]="{
+          'active': rlaAdd.isActive,
+          'text-white': !rlaAdd.isActive,
+         }">Add</a>
+    </li>
+    <li class="h4 nav-item mx-2">
+      <a class="text-decoration-none p-3 glassmorphism-hover rounded-3"
+         routerLink="/library"
+         routerLinkActive
+         #rlaLibrary="routerLinkActive"
+         [ngClass]="{
+          'active': rlaLibrary.isActive,
+          'text-white': !rlaLibrary.isActive,
+         }">Library</a>
+    </li>
+  </ul>
+</nav>

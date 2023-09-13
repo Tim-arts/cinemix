@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.item {
+  border: 3px solid transparent;
+  border-radius: 8px;
+  transition: border-color .3s ease;
+  will-change: border-color;
+
+  &.selected {
+    border-color: $secondary;
+  }
+}

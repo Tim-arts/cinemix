@@ -1,0 +1,12 @@
+<ul class="d-flex list-unstyled mt-5">
+  <li class="item d-flex col mx-1 px-0 text-center cursor-pointer"
+      *ngFor="let item of items; let i = index"
+      (click)="toggleSelected(i, item)" [ngClass]="{'selected': selectedItems[i]}">
+    <div class="card border-0">
+      <img class="img-fluid rounded-top-2" src="{{ item.Poster }}" alt="Movie"/>
+      <div class="card-body">
+        <p class="card-title">{{ item.Title }}</p>
+      </div>
+    </div>
+  </li>
+</ul>
