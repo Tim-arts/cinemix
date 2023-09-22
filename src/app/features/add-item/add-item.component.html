@@ -5,7 +5,7 @@
     <div class="d-flex flex-column col align-items-center">
       <ng-container *ngIf="items$ | async as items">
         <ng-container *ngIf="items.Search.length > 0; else noResultsTemplate">
-          <app-display-api-results class="d-flex" [items]="items.Search"></app-display-api-results>
+          <app-display-api-results [items]="items.Search"></app-display-api-results>
 
           <ngb-pagination
             class="mt-5"
