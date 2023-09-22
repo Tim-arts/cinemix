@@ -13,21 +13,14 @@
             [page]="page"
             [pageSize]="10"
             [collectionSize]="items.totalResults"
-            [rotate]="true"
             [maxSize]="3"
-            [boundaryLinks]="true"
-            [directionLinks]="true"
             [ngClass]="{ 'd-none': items.totalResults <= pageSize }"
           >
-            <ng-template ngbPaginationFirst><<</ng-template>
-            <ng-template ngbPaginationPrevious>Previous</ng-template>
             <ng-template let-page ngbPaginationNumber>
             <span class="page">
                 {{ page }}
             </span>
             </ng-template>
-            <ng-template ngbPaginationNext>Next</ng-template>
-            <ng-template ngbPaginationLast>>></ng-template>
           </ngb-pagination>
         </ng-container>
       </ng-container>
