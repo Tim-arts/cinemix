@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { ItemsDto, RequestParams } from '../../core/interfaces/movie';
-import { MovieService } from '../../core/services/movie/movie.service';
+import { FetchItemsService } from '../../core/services/fetch-items/fetch-items.service';
 
 @Component({
   selector: 'app-add-item',
@@ -18,7 +18,7 @@ export class AddItemComponent implements OnInit {
   pageSize: number = 10;
   page: number = 1;
 
-  constructor(private readonly movieService: MovieService) {
+  constructor(private readonly fetchItemsService: FetchItemsService) {
   }
 
   ngOnInit(): void {
@@ -36,7 +36,7 @@ export class AddItemComponent implements OnInit {
       page: this.page,
     };
 
-    this.items$ = this.movieService.searchMovies(requestParams);
+    this.items$ = this.fetchItemsService.searchMovies(requestParams);
   }
 
 }

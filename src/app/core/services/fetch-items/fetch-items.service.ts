@@ -7,7 +7,7 @@ import { ItemsDto, RequestParams } from '../../interfaces/movie';
 @Injectable({
   providedIn: 'root'
 })
-export class MovieService {
+export class FetchItemsService {
 
   private URL_API: string = 'http://www.omdbapi.com/?apikey=f8471a10&';
 

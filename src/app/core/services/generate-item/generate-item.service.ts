@@ -3,9 +3,10 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class RandomSuggestionService {
+export class GenerateItemService {
 
-  constructor() { }
+  constructor() {
+  }
 
   getRandomSuggestion() {
 
