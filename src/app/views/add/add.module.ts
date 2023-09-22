@@ -8,13 +8,13 @@ import {
   NgbPaginationPrevious
 } from '@ng-bootstrap/ng-bootstrap';
 import { CoreModule } from '../../core/core.module';
+import { AddItemModule } from '../../features/add-item/add-item.module';
 import { HeaderModule } from '../../shared/components/header/header.module';
 import { AddRoutingModule } from './add-routing.module';
 import { AddComponent } from './add.component';
-import { DisplayApiResultsComponent } from './display-api-results/display-api-results.component';
 
 @NgModule({
-  declarations: [AddComponent, DisplayApiResultsComponent],
+  declarations: [AddComponent],
   exports: [AddComponent],
   imports: [
     CommonModule,
@@ -28,6 +28,7 @@ import { DisplayApiResultsComponent } from './display-api-results/display-api-re
     NgbPaginationNumber,
     NgbPaginationNext,
     NgbPaginationLast,
+    AddItemModule,
   ]
 })
 export class AddModule {

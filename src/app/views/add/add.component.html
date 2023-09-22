@@ -1,54 +1,6 @@
 <div class="d-flex flex-column min-vh-100">
   <app-header></app-header>
 
-  <div class="container d-flex flex-column align-items-center">
-    <div class="row w-100">
-      <div class="d-flex flex-column align-items-center">
-        <form [formGroup]="searchForm" class="w-100">
-          <input class="form-control py-3" formControlName="searchTerm" placeholder="Search for a title"
-                 (input)="fetchItems()"/>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <div class="results container-fluid d-flex flex-column flex-grow-1 align-items-center px-5 mt-3">
-    <div class="row flex-grow-1 w-100">
-      <div class="d-flex flex-column col align-items-center">
-        <ng-container *ngIf="items$ | async as items">
-          <ng-container *ngIf="items.Search.length > 0; else noResultsTemplate">
-            <app-display-api-results class="d-flex" [items]="items.Search"></app-display-api-results>
-
-            <ngb-pagination
-              class="mt-5"
-              (pageChange)="pageChange($event)"
-              [page]="page"
-              [pageSize]="10"
-              [collectionSize]="items.totalResults"
-              [rotate]="true"
-              [maxSize]="3"
-              [boundaryLinks]="true"
-              [directionLinks]="true"
-              [ngClass]="{ 'd-none': items.totalResults <= pageSize }"
-            >
-              <ng-template ngbPaginationFirst><<</ng-template>
-              <ng-template ngbPaginationPrevious>Previous</ng-template>
-              <ng-template let-page ngbPaginationNumber>
-            <span class="page">
-                {{ page }}
-            </span>
-              </ng-template>
-              <ng-template ngbPaginationNext>Next</ng-template>
-              <ng-template ngbPaginationLast>>></ng-template>
-            </ngb-pagination>
-          </ng-container>
-        </ng-container>
-      </div>
-    </div>
-  </div>
+  <app-add-item></app-add-item>
 </div>
 
-<ng-template #noResultsTemplate>
-  <p>There's no result to display</p>
-  <p>No items selected</p>
-</ng-template>
