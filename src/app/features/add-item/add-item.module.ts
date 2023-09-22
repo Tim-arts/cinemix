@@ -10,10 +10,12 @@ import {
 } from '@ng-bootstrap/ng-bootstrap';
 import { AddItemComponent } from './add-item.component';
 import { DisplayApiResultsModule } from './display-api-results/display-api-results.module';
+import { SearchItemComponent } from './search-item/search-item.component';
 
 @NgModule({
   declarations: [
-    AddItemComponent
+    AddItemComponent,
+    SearchItemComponent
   ],
   exports: [
     AddItemComponent

@@ -1,15 +1,6 @@
-<div class="container d-flex flex-column align-items-center">
-  <div class="row w-100">
-    <div class="d-flex flex-column align-items-center">
-      <form [formGroup]="searchForm" class="w-100">
-        <input class="form-control py-3" formControlName="searchTerm" placeholder="Search for a title"
-               (input)="fetchItems()"/>
-      </form>
-    </div>
-  </div>
-</div>
+<app-search-item (emitSearchTerm)="onSearchTerm($event)"></app-search-item>
 
-<div class="results container-fluid d-flex flex-column flex-grow-1 align-items-center px-5 mt-3">
+<div class="container-fluid d-flex flex-column flex-grow-1 align-items-center px-5 mt-3">
   <div class="row flex-grow-1 w-100">
     <div class="d-flex flex-column col align-items-center">
       <ng-container *ngIf="items$ | async as items">
@@ -18,7 +9,7 @@
 
           <ngb-pagination
             class="mt-5"
-            (pageChange)="pageChange($event)"
+            (pageChange)="onPageChange($event)"
             [page]="page"
             [pageSize]="10"
             [collectionSize]="items.totalResults"
