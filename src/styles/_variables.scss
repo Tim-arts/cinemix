@@ -3,13 +3,15 @@ $secondary: #6fff16;
 $tertiary: #0000a3;
 
 /* Override BS RULES */
-$pagination-bg: $tertiary;
-$pagination-disabled-bg: $tertiary;
+$pagination-bg: transparent;
+$pagination-active-bg: transparent;
+$pagination-disabled-bg: transparent;
+
 $pagination-color: white;
-$pagination-disabled-color: white;
 $pagination-hover-color: $tertiary;
-$pagination-active-bg: $tertiary;
-$pagination-active-color: $primary;
+$pagination-active-color: $tertiary;
+$pagination-disabled-color: white;
+
 $pagination-border-width: 0;
 $pagination-border-radius: 50px;
 $pagination-padding-y: 1rem;
