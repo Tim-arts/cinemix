@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ItemDto } from '../../../core/interfaces/movie';
+import { ItemDto } from '../../../core/interfaces/item';
 import { LocalstorageService } from '../../../core/services/localstorage/localstorage.service';
 
 @Component({

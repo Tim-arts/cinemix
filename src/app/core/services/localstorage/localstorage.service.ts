@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ItemDto } from '../../interfaces/movie';
+import { ItemDto } from '../../interfaces/item';
 
 @Injectable({
   providedIn: 'root'

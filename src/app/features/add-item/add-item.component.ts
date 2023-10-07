@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ItemsDto, RequestParams } from '../../core/interfaces/movie';
+import { ItemsDto, RequestParams } from '../../core/interfaces/item';
 import { FetchItemsService } from '../../core/services/fetch-items/fetch-items.service';
 
 @Component({
