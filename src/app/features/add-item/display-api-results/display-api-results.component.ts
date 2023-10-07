@@ -27,7 +27,7 @@ export class DisplayApiResultsComponent {
     }
 
     this.selectedItems[index] = item;
-    this.itemService.addItem(item);
+    this.itemService.setItem(item);
   }
 
 }

@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../../../environment/environment';
 import { ItemDto, ItemsDto, RequestParams } from '../../interfaces/item';
-import { LocalstorageService } from '../localstorage/localstorage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +10,9 @@ import { LocalstorageService } from '../localstorage/localstorage.service';
 export class ItemService {
 
   private readonly URL_API: string = `http://www.omdbapi.com/?apikey=${environment.omdbApiKey}`;
+  private readonly localStorageKey: string = 'cinemix-library';
 
-  constructor(
-    private readonly httpClient: HttpClient,
-    private readonly localStorageService: LocalstorageService,
-  ) {
+  constructor(private readonly httpClient: HttpClient) {
   }
 
   fetchItems(requestParams: RequestParams): Observable<ItemsDto> {
@@ -23,17 +20,32 @@ export class ItemService {
     return this.httpClient.get<ItemsDto>(`${this.URL_API}${params}`);
   }
 
-  isAlreadyExisting(item: ItemDto): boolean {
-    const items: ItemDto[] = this.localStorageService.getItems();
-    return this.localStorageService.isAlreadyExisting(items, item);
+  getItems(): ItemDto[] {
+    const storedItems: string | null = localStorage.getItem(this.localStorageKey);
+    return storedItems ? JSON.parse(storedItems) : [];
   }
 
-  addItem(item: ItemDto): void {
-    this.localStorageService.setItem(item);
+  setItems(items: ItemDto[]): void {
+    localStorage.setItem(this.localStorageKey, JSON.stringify(items));
+  }
+
+  isAlreadyExisting(item: ItemDto): boolean {
+    const items: ItemDto[] = this.getItems();
+    return !!items.find((x: ItemDto): boolean => x.imdbID === item.imdbID);
+  }
+
+  setItem(item: ItemDto): void {
+    const items: ItemDto[] = this.getItems();
+    items.push(item);
+
+    this.setItems(items);
   }
 
   removeItem(item: ItemDto): void {
-    this.localStorageService.removeItem(item);
+    let items: ItemDto[] = this.getItems();
+    items = items.filter((x: ItemDto): boolean => x.imdbID !== item.imdbID);
+
+    this.setItems(items);
   }
 
 }
