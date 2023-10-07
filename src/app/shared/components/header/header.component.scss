@@ -1,5 +1,11 @@
 @use 'variables' as *;
 
+a {
+  &:hover {
+    color: $primary !important;
+  }
+}
+
 .active {
   color: $primary;
 }

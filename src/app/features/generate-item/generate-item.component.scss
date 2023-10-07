@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.generate {
+  width: 250px;
+  height: 250px;
+
+  background-size: 300% 100%;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    border: 1px solid rgba(255, 255, 255, .6);
+    background-position: 100% 0;
+    background-image: linear-gradient(to right bottom, #4000ae, #5100b3, #6100b8, #9200ac, #b500a0, #cf0095, #f10e77, #ff3e58);
+    box-shadow: 0 4px 15px 0 #4000ae;
+  }
+}

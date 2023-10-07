@@ -4,27 +4,14 @@ $border-width: 1px;
   border: $border-width solid rgba(255, 255, 255, 0.3);
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(15px);
-  transition: box-shadow .3s ease;
-  will-change: background-color;
-
-  &:hover {
-    box-shadow: 0 0 25px 1px rgba(0, 0, 0, 0.3);
-  }
 }
 
 .shrink {
   transition: transform .3s ease;
+  will-change: transform;
 
   &:hover {
-    transform: scale(.99);
-  }
-}
-
-.glassmorphism-hover {
-  border: $border-width solid transparent;
-
-  &:hover {
-    @extend .glassmorphism;
+    transform: scale(1.05);
   }
 }
 

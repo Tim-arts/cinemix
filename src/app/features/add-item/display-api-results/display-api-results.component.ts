@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ItemDto } from '../../../core/interfaces/movie';
+import { LocalstorageService } from '../../../core/services/localstorage/localstorage.service';
 
 @Component({
   selector: 'app-display-api-results',
@@ -11,6 +12,9 @@ export class DisplayApiResultsComponent {
   selectedItems: Array<ItemDto | undefined> = new Array(10).fill(undefined);
 
   @Input() items!: ItemDto[];
+
+  constructor(private readonly localStorageService: LocalstorageService) {
+  }
 
   toggleSelected(index: number, item: ItemDto): void {
     this.selectedItems[index] = this.selectedItems[index] ? undefined : item;
