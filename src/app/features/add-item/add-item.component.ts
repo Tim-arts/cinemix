@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ItemsDto, RequestParams } from '../../core/interfaces/item';
-import { FetchItemsService } from '../../core/services/fetch-items/fetch-items.service';
+import { ItemService } from '../../core/services/item/item.service';
 
 @Component({
   selector: 'app-add-item',
@@ -15,7 +15,7 @@ export class AddItemComponent {
   protected pageSize: number = 10;
   protected page: number = 1;
 
-  constructor(private readonly fetchItemsService: FetchItemsService) {
+  constructor(private readonly itemService: ItemService) {
   }
 
   onPageChange(page: number): void {
@@ -34,7 +34,7 @@ export class AddItemComponent {
       page: this.page,
     };
 
-    this.items$ = this.fetchItemsService.searchMovies(requestParams);
+    this.items$ = this.itemService.fetchItems(requestParams);
   }
 
 }
