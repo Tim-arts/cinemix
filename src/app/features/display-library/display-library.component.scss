@@ -1,4 +1,4 @@
-img:not(.img-placeholder) {
-  height: 200px;
+img {
+  height: 100%;
   object-fit: cover;
 }

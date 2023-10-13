@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { DisplayLibraryComponent } from './display-library.component';
 
 @NgModule({
@@ -11,6 +11,7 @@ import { DisplayLibraryComponent } from './display-library.component';
   ],
   imports: [
     CommonModule,
+    NgOptimizedImage,
   ]
 })
 export class DisplayLibraryModule {
