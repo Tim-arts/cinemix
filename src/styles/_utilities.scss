@@ -1,8 +1,8 @@
 $border-width: 1px;
 
 .glassmorphism {
-  border: $border-width solid rgba(255, 255, 255, 0.3);
-  background-color: rgba(255, 255, 255, 0.3);
+  border: $border-width solid rgba(255, 255, 255, 0.3) !important;
+  background-color: rgba(255, 255, 255, 0.3) !important;
   backdrop-filter: blur(15px);
 }
 
@@ -17,4 +17,21 @@ $border-width: 1px;
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.card-cache {
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  background: linear-gradient(to left, orange, tomato);
+  transition: 0.5s;
+}
+
+.card-reveal {
+  .card-cache {
+    bottom: calc(100%);
+  }
 }
