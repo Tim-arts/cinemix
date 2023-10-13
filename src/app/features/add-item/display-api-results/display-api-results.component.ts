@@ -25,7 +25,7 @@ export class DisplayApiResultsComponent implements OnInit {
   }
 
   toggleSelected(index: number, item: ItemDto): void {
-    const isItemAlreadySelected: boolean = this.itemService.isAlreadyExisting(item);
+    const isItemAlreadySelected: boolean = this.itemService.isItemAlreadySelected(item);
 
     if (isItemAlreadySelected) {
       this.selectedItems[index] = undefined;

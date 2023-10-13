@@ -42,7 +42,7 @@ export class ItemService {
     localStorage.setItem(this.localStorageKey, JSON.stringify(items));
   }
 
-  isAlreadyExisting(item: ItemDto): boolean {
+  isItemAlreadySelected(item: ItemDto): boolean {
     const items: ItemDto[] = this.getItems();
     return !!items.find((x: ItemDto): boolean => x.imdbID === item.imdbID);
   }
