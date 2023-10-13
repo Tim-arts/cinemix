@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DisplayApiResultsComponent } from './display-api-results.component';
+import { DisplayResultsComponent } from './display-results.component';
 
 describe('DisplayApiResultsComponent', () => {
-  let component: DisplayApiResultsComponent;
-  let fixture: ComponentFixture<DisplayApiResultsComponent>;
+  let component: DisplayResultsComponent;
+  let fixture: ComponentFixture<DisplayResultsComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DisplayApiResultsComponent]
+      declarations: [DisplayResultsComponent]
     });
-    fixture = TestBed.createComponent(DisplayApiResultsComponent);
+    fixture = TestBed.createComponent(DisplayResultsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -6,7 +6,7 @@ import {
   NgbPaginationNumber,
 } from '@ng-bootstrap/ng-bootstrap';
 import { AddItemComponent } from './add-item.component';
-import { DisplayApiResultsModule } from './display-api-results/display-api-results.module';
+import { DisplayResultsModule } from './display-results/display-results.module';
 import { SearchItemComponent } from './search-item/search-item.component';
 
 @NgModule({
@@ -23,7 +23,7 @@ import { SearchItemComponent } from './search-item/search-item.component';
     NgbPagination,
     NgbPaginationNumber,
     ReactiveFormsModule,
-    DisplayApiResultsModule,
+    DisplayResultsModule,
   ]
 })
 export class AddItemModule {

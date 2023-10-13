@@ -3,11 +3,11 @@ import { ItemDto } from '../../../core/interfaces/item';
 import { ItemService } from '../../../core/services/item/item.service';
 
 @Component({
-  selector: 'app-display-api-results',
-  templateUrl: './display-api-results.component.html',
-  styleUrls: ['./display-api-results.component.scss']
+  selector: 'app-display-results',
+  templateUrl: './display-results.component.html',
+  styleUrls: ['./display-results.component.scss']
 })
-export class DisplayApiResultsComponent implements OnInit {
+export class DisplayResultsComponent implements OnInit {
 
   selectedItems!: Array<ItemDto | undefined>;
 
