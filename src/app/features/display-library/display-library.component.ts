@@ -11,7 +11,7 @@ export class DisplayLibraryComponent implements OnInit {
 
   private readonly maxItemsPerRow: number = 10;
 
-  items: ItemDto[] | undefined = undefined;
+  items!: ItemDto[] | undefined;
   placeholderItems!: ItemDto[];
 
   constructor(private readonly itemService: ItemService) {
@@ -19,7 +19,6 @@ export class DisplayLibraryComponent implements OnInit {
 
   ngOnInit(): void {
     this.items = this.itemService.getItems();
-    console.log()
     this.placeholderItems = new Array(this.maxItemsPerRow - this.items.length);
   }
 
