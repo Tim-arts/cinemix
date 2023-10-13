@@ -4,13 +4,13 @@ import { DisplayLibraryComponent } from './display-library.component';
 
 @NgModule({
   declarations: [
-    DisplayLibraryComponent
+    DisplayLibraryComponent,
   ],
   exports: [
-    DisplayLibraryComponent
+    DisplayLibraryComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ]
 })
 export class DisplayLibraryModule {

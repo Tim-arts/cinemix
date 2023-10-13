@@ -26,6 +26,10 @@ export class ItemService {
   }
 
   getSelectedItems(items: ItemDto[]): Array<ItemDto | undefined> {
+    if (!items || items?.length === 0) {
+      throw new Error('items are undefined');
+    }
+
     const storedItems: ItemDto[] = this.getItems();
     const comparisonItems: ItemDto[] = items.filter((item1: ItemDto) => storedItems.some((item2: ItemDto): boolean => item1.imdbID === item2.imdbID));
     let selectedItems: Array<ItemDto | undefined> = [];
