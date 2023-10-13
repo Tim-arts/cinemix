@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ItemDto } from '../../../core/interfaces/item';
 import { ItemService } from '../../../core/services/item/item.service';
 
@@ -7,13 +7,21 @@ import { ItemService } from '../../../core/services/item/item.service';
   templateUrl: './display-api-results.component.html',
   styleUrls: ['./display-api-results.component.scss']
 })
-export class DisplayApiResultsComponent {
+export class DisplayApiResultsComponent implements OnInit {
 
-  selectedItems: Array<ItemDto | undefined> = new Array(10).fill(undefined);
+  selectedItems!: Array<ItemDto | undefined>;
 
   @Input() items!: ItemDto[];
 
   constructor(private readonly itemService: ItemService) {
+  }
+
+  ngOnInit(): void {
+    this.initializeSelectedItems();
+  }
+
+  initializeSelectedItems(): void {
+    this.selectedItems = this.itemService.getSelectedItems(this.items);
   }
 
   toggleSelected(index: number, item: ItemDto): void {

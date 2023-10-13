@@ -25,6 +25,19 @@ export class ItemService {
     return storedItems ? JSON.parse(storedItems) : [];
   }
 
+  getSelectedItems(items: ItemDto[]): Array<ItemDto | undefined> {
+    const storedItems: ItemDto[] = this.getItems();
+    const comparisonItems: ItemDto[] = items.filter((item1: ItemDto) => storedItems.some((item2: ItemDto): boolean => item1.imdbID === item2.imdbID));
+    let selectedItems: Array<ItemDto | undefined> = [];
+
+    items.forEach((item1: ItemDto): void => {
+      const isSelected: boolean = !!comparisonItems.find((item2: ItemDto): boolean => item1.imdbID === item2.imdbID);
+      selectedItems.push(isSelected ? item1 : undefined);
+    });
+
+    return selectedItems;
+  }
+
   setItems(items: ItemDto[]): void {
     localStorage.setItem(this.localStorageKey, JSON.stringify(items));
   }
