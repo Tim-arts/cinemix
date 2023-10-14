@@ -4,7 +4,7 @@
   <div class="row flex-grow-1 w-100">
     <div class="d-flex flex-column col align-items-center">
       <ng-container *ngIf="items$ | async as items">
-        <ng-container *ngIf="items.Search.length > 0; else noResultsTemplate">
+        <ng-container *ngIf="items.Search && items.Search.length > 0; else noResultsTemplate">
           <app-display-results [items]="items.Search"></app-display-results>
 
           <ngb-pagination
@@ -29,5 +29,5 @@
 </div>
 
 <ng-template #noResultsTemplate>
-  <p>There's no result to display</p>
+  <p class="text-white">There's no result to display</p>
 </ng-template>
