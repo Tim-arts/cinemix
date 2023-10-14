@@ -2,3 +2,21 @@ img {
   height: 100%;
   object-fit: cover;
 }
+
+.item {
+  &:hover {
+    .remove-icon {
+      opacity: .5;
+    }
+  }
+}
+
+.remove-icon {
+  opacity: 0;
+  transition: opacity .3s ease;
+  will-change: opacity;
+
+  &:hover {
+    opacity: 1 !important;
+  }
+}

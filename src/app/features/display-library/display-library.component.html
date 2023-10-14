@@ -2,10 +2,14 @@
   <div class="row flex-grow-1 w-100">
     <div class="d-flex flex-column col align-items-center">
 
-      <ul class="d-flex list-unstyled mt-5">
-        <li class="item d-flex col mx-1 px-0 text-center cursor-pointer" *ngFor="let item of items">
+      <ul class="grid-6 list-unstyled mt-5">
+        <li class="item d-flex col position-relative" *ngFor="let item of items">
           <div class="card border-0">
             <img class="img-fluid rounded" src="{{ item.Poster }}" alt="Movie"/>
+          </div>
+
+          <div class="remove-icon position-absolute top-0 end-0 text-white px-2 cursor-pointer">
+            <i class="bi fs-1 bi-x"></i>
           </div>
         </li>
       </ul>
