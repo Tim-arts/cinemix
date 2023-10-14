@@ -25,9 +25,9 @@ export class ItemService {
     return storedItems ? JSON.parse(storedItems) : [];
   }
 
-  getSelectedItems(items: ItemDto[]): Array<ItemDto | undefined> {
+  getSelectedItems(items: ItemDto[]): Array<ItemDto | undefined> | undefined {
     if (!items || items?.length === 0) {
-      throw new Error('items are undefined');
+      return undefined;
     }
 
     const storedItems: ItemDto[] = this.getItems();
@@ -65,11 +65,11 @@ export class ItemService {
     this.setItems(items);
   }
 
-  getRandomItem(): ItemDto {
+  getRandomItem(): ItemDto | undefined {
     const storedItems: ItemDto[] = this.getItems();
 
     if (!storedItems || storedItems?.length === 0) {
-      throw new Error('The library is empty');
+      return undefined;
     }
 
     const randomIndex: number = Math.floor(Math.random() * storedItems.length);
