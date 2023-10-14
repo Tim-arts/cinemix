@@ -15,6 +15,15 @@ export class DisplayLibraryComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.updateItems();
+  }
+
+  removeItem(item: ItemDto): void {
+    this.itemService.removeItem(item);
+    this.updateItems();
+  }
+
+  updateItems(): void {
     this.items = this.itemService.getItems();
   }
 

@@ -8,7 +8,8 @@
             <img class="img-fluid rounded" src="{{ item.Poster }}" alt="Movie"/>
           </div>
 
-          <div class="remove-icon position-absolute top-0 end-0 text-white px-2 cursor-pointer">
+          <div class="remove-icon position-absolute top-0 end-0 text-white px-2 cursor-pointer"
+               (click)="removeItem(item)">
             <i class="bi fs-1 bi-x"></i>
           </div>
         </li>
