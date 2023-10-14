@@ -9,13 +9,17 @@ import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 export class SearchItemComponent implements OnInit {
 
   protected searchForm: UntypedFormGroup = new UntypedFormGroup({
-    searchTerm: new UntypedFormControl('Star wars')
+    searchTerm: new UntypedFormControl()
   });
 
   @Output() emitSearchTerm: EventEmitter<string> = new EventEmitter<string>();
 
   ngOnInit(): void {
-    this.updateSearchTerm();
+    const isSearchTerm: boolean = !!this.searchForm.controls['searchTerm'].value;
+
+    if (isSearchTerm) {
+      this.updateSearchTerm();
+    }
   }
 
   updateSearchTerm(): void {
