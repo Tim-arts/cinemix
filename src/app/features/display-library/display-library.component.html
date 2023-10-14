@@ -8,13 +8,6 @@
             <img class="img-fluid rounded" src="{{ item.Poster }}" alt="Movie"/>
           </div>
         </li>
-
-        <ng-container *ngIf="placeholderItems">
-          <li class="item d-flex col mx-1 px-0 text-center cursor-pointer" *ngFor="let item of placeholderItems">
-            <img class="img-fluid img-placeholder rounded-top-2" ngSrc="https://placehold.co/172x312" width="172"
-                 priority="true" height="312" alt="Movie"/>
-          </li>
-        </ng-container>
       </ul>
 
     </div>
