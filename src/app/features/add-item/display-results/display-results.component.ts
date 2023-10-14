@@ -9,7 +9,7 @@ import { ItemService } from '../../../core/services/item/item.service';
 })
 export class DisplayResultsComponent implements OnInit {
 
-  selectedItems!: Array<ItemDto | undefined>;
+  selectedItems!: Array<ItemDto | undefined> | undefined;
 
   @Input() items!: ItemDto[];
 
@@ -25,6 +25,10 @@ export class DisplayResultsComponent implements OnInit {
   }
 
   toggleSelected(index: number, item: ItemDto): void {
+    if (!this.selectedItems) {
+      return;
+    }
+
     const isItemAlreadySelected: boolean = this.itemService.isItemAlreadySelected(item);
 
     if (isItemAlreadySelected) {

@@ -20,7 +20,11 @@ export class GenerateItemComponent {
   }
 
   generate(): void {
-    const generatedItem: ItemDto = this.itemService.getRandomItem();
+    const generatedItem: ItemDto | undefined = this.itemService.getRandomItem();
+
+    if (!generatedItem) {
+      return;
+    }
 
     const revealCardElement = this.revealCard.nativeElement;
     const imageElement = revealCardElement.querySelector('img');
