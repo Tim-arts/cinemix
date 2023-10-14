@@ -1,3 +1,5 @@
+@use 'animations' as *;
+
 $border-width: 1px;
 
 .glassmorphism {
@@ -15,29 +17,33 @@ $border-width: 1px;
   }
 }
 
+.grid-6 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1em;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
 
 .card-cache {
-  z-index: 1;
   position: absolute;
-  bottom: 0;
+  top: 0;
   height: 100%;
   width: 100%;
-  left: 0;
   background: linear-gradient(to left, orange, tomato);
   transition: 0.5s;
+  z-index: 2;
 }
 
 .card-reveal {
   .card-cache {
-    bottom: calc(100%);
+    opacity: 0;
   }
 }
 
-.grid-6 {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 1em;
+.card-animation {
+  animation: card-animation 1s forwards;
+  will-change: transform;
 }
