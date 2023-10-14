@@ -9,7 +9,7 @@ import { ItemDto, ItemsDto, RequestParams } from '../../interfaces/item';
 })
 export class ItemService {
 
-  private readonly URL_API: string = `http://www.omdbapi.com/?apikey=${environment.omdbApiKey}`;
+  private readonly URL_API: string = `https://www.omdbapi.com/?apikey=${environment.omdbApiKey}`;
   private readonly localStorageKey: string = 'cinemix-library';
 
   constructor(private readonly httpClient: HttpClient) {
