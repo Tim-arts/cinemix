@@ -2,19 +2,25 @@
   <div class="row flex-grow-1 w-100">
     <div class="d-flex flex-column col align-items-center">
 
-      <ul class="grid-6 list-unstyled mt-5">
-        <li class="item d-flex col position-relative shadow" *ngFor="let item of items">
-          <div class="card border-0">
-            <img class="img-fluid rounded" src="{{ item.Poster }}" alt="Movie"/>
-          </div>
+      <ng-container *ngIf="items && items.length > 0; else noResultsTemplate">
+        <ul class="grid-6 list-unstyled mt-5">
+          <li class="item d-flex col position-relative shadow" *ngFor="let item of items">
+            <div class="card border-0">
+              <img class="img-fluid rounded" src="{{ item.Poster }}" alt="Movie"/>
+            </div>
 
-          <div class="remove-icon position-absolute top-0 end-0 text-white px-2 cursor-pointer"
-               (click)="removeItem(item)">
-            <i class="bi fs-1 bi-x"></i>
-          </div>
-        </li>
-      </ul>
+            <div class="remove-icon position-absolute top-0 end-0 text-white px-2 cursor-pointer"
+                 (click)="removeItem(item)">
+              <i class="bi fs-1 bi-x"></i>
+            </div>
+          </li>
+        </ul>
+      </ng-container>
 
     </div>
   </div>
 </div>
+
+<ng-template #noResultsTemplate>
+  <p class="text-white">There's no results to display</p>
+</ng-template>
