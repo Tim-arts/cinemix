@@ -17,9 +17,7 @@
             [ngClass]="{ 'd-none': items.totalResults <= pageSize }"
           >
             <ng-template let-page ngbPaginationNumber>
-            <span class="page">
-                {{ page }}
-            </span>
+              <span class="page">{{ page }}</span>
             </ng-template>
           </ngb-pagination>
         </ng-container>
