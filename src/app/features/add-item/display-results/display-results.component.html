@@ -1,8 +1,8 @@
-<ul class="d-flex list-unstyled mt-5">
-  <li class="item d-flex col mx-1 px-0 text-center cursor-pointer"
+<ul class="d-grid grid-10 gap-1 list-unstyled mt-5 gap-4 gap-lg-0">
+  <li class="item d-flex  mx-1 px-0 text-center cursor-pointer"
       *ngFor="let item of items; let i = index"
       (click)="toggleSelected(i, item)" [ngClass]="{'selected': selectedItems ? selectedItems[i] : undefined}">
-    <div class="card border-0">
+    <div class="card border-0 w-100">
       <img class="img-fluid rounded-top-2" src="{{ item.Poster }}" alt="Movie"/>
       <div class="card-body">
         <p class="card-title">{{ item.Title }}</p>

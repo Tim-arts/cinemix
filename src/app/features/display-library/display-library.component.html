@@ -3,7 +3,7 @@
     <div class="d-flex flex-column col align-items-center">
 
       <ng-container *ngIf="items && items.length > 0; else noResultsTemplate">
-        <ul class="grid-6 list-unstyled mt-5">
+        <ul class="d-grid grid-6 gap-4 list-unstyled mt-lg-5">
           <li class="item d-flex col position-relative shadow" *ngFor="let item of items">
             <div class="card border-0">
               <img class="img-fluid rounded" src="{{ item.Poster }}" alt="Movie"/>
