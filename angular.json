@@ -75,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "cinemix-app:build:production"
+              "buildTarget": "cinemix-app:build:production"
             },
             "development": {
-              "browserTarget": "cinemix-app:build:development"
+              "buildTarget": "cinemix-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "cinemix-app:build"
+            "buildTarget": "cinemix-app:build"
           }
         },
         "test": {
